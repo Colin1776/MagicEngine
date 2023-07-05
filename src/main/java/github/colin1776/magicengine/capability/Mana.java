@@ -44,6 +44,6 @@ public class Mana
     public void loadNBTData(CompoundTag tag)
     {
         mana = tag.getInt("mana");
-        maxMana = tag.getInt("maxMana)");
+        maxMana = tag.getInt("maxMana");
     }
 }

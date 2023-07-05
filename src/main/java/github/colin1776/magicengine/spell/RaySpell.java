@@ -39,10 +39,7 @@ public final class RaySpell extends Spell
                 return false;
         }
 
-        if (!getCost().meetsCost(caster, castingItem))
-            return false;
-
-        return true;
+        return getCost().meetsCost(caster, castingItem);
     }
 
     @Override

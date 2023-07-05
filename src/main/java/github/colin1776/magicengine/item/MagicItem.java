@@ -23,46 +23,19 @@ public class MagicItem extends Item implements CastingItem
     @Override
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand)
     {
-        /*if (level.isClientSide)
-        {
-            System.out.println("Client: " + ClientManaData.mana);
-            System.out.println("Server: " + ClientManaData.maxMana);
-        }
-        else
-        {
-            int mana = player.getCapability(ManaProvider.MANA)
-                    .map(Mana::getMana)
-                    .orElse(0);
-
-            int maxMana = player.getCapability(ManaProvider.MANA)
-                    .map(Mana::getMaxMana)
-                    .orElse(0);
-
-
-            System.out.println("Server: " + mana);
-            System.out.println("Server: " +  maxMana);
-        }*/
-
-        long tick = level.getGameTime();
-
-        if (!level.isClientSide)
-            System.out.println(tick);
-        
-        return InteractionResultHolder.consume(player.getItemInHand(hand));
+        return beginCast(level, player, hand);
     }
 
     @Override
     public void onUseTick(Level level, LivingEntity entity, ItemStack stack, int tick)
     {
-
-
-        //castTick(level, entity, stack, tick);
+        castTick(level, entity, stack, tick);
     }
 
     @Override
     public void inventoryTick(ItemStack p_41404_, Level p_41405_, Entity p_41406_, int p_41407_, boolean p_41408_)
     {
-        //decrementCooldowns();
+        decrementCooldowns();
     }
 
     @Override

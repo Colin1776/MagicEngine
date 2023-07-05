@@ -14,6 +14,9 @@ import net.minecraft.world.phys.Vec3;
 
 public abstract class Spell
 {
+    // TODO change this to be a single class, no inheritance, everything is done here, create a class for the particle effects, and then a class for spell result
+    // TODO both can be extended so that people using this lib can make their own particle effects and spell results, come up with better names for those btw
+
     private final String name;
     private final Lore lore;
     private final int castDuration;

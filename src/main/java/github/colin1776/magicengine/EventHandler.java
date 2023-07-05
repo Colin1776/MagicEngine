@@ -78,6 +78,9 @@ public class EventHandler
         if (event.phase == TickEvent.Phase.START)
             return;
 
+        if (event.level.getGameTime() % 20 != 0)
+            return;
+
         event.level.players().forEach(player ->
         {
             if (player instanceof ServerPlayer serverPlayer)
